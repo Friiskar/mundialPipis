@@ -487,7 +487,6 @@ const AWARD_PLAYERS = [
   { name: 'Barış Alper Yılmaz', country: 'Turkey' },
   { name: 'Yusuf Yazıcı', country: 'Turkey' },
   { name: 'Semih Kılıçsoy', country: 'Turkey' },
-  { name: 'Baris Yılmaz', country: 'Turkey' },
   { name: 'Bertuğ Yıldırım', country: 'Turkey' },
 
   // USA
