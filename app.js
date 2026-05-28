@@ -23,13 +23,13 @@ const puntuaciones = {
     quarterfinals: 5,
     semifinals: 10,
     finalist: 20,
-    champion: 20,
+    champion: 30,
     thirdPlace: 15
   },
   premios: {
-    topScorer: 8,
-    topAssister: 5,
-    goldenGlove: 5,
+    topScorer: 10,
+    topAssister: 8,
+    goldenGlove: 8,
     topScoringTeam: 5,
     mostConcededTeam: 8
   }
