@@ -99,8 +99,6 @@ const RESULTS = {
     ],
     semifinals: [
       "Francia",
-      "España",
-      "Brasil",
       "Argentina"
     ],
 
