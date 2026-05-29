@@ -60,7 +60,17 @@ const QUINIELA_1X2_MATCHES = [
   { group: 'A', team1: 'Mexico',   team2: 'South Korea' },
   { group: 'C', team1: 'Scotland', team2: 'Morocco'     },
   { group: 'H', team1: 'Uruguay',  team2: 'Spain'       }
-].map(m => Object.assign(m, { key: [m.team1, m.team2].sort().join('__') }));
+].map(m => {
+  const legacyKey = [m.team1, m.team2].sort().join('__');
+  const team1 = translateTeamName(m.team1);
+  const team2 = translateTeamName(m.team2);
+  return Object.assign(m, {
+    team1,
+    team2,
+    key: [team1, team2].sort().join('__'),
+    legacyKey
+  });
+});
 
 function emptyAwardsState() {
   const empty = {};
@@ -1735,7 +1745,7 @@ function restoreLocalPrediction() {
     if (data.quiniela1x2 && typeof data.quiniela1x2 === 'object') {
       const restored = {};
       QUINIELA_1X2_MATCHES.forEach(m => {
-        const v = data.quiniela1x2[m.key];
+        const v = data.quiniela1x2[m.key] ?? data.quiniela1x2[m.legacyKey];
         if (v === '1' || v === 'X' || v === '2') restored[m.key] = v;
       });
       state.quiniela1x2 = restored;
