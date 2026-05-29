@@ -24,31 +24,31 @@
 const RESULTS = {
   // Orden final de cada grupo: 1º, 2º, 3º, 4º.
   groups: {
-    A: ["México", "Suiza", "Corea del Sur", "Sudáfrica"],
-    B: ["España", "Uruguay", "Marruecos", "Escocia"],
-    C: ["Argentina", "Canadá", "Bosnia y Herzegovina", "Catar"],
-    D: ["Brasil", "Paraguay", "Australia", "Turquía"],
-    E: ["Alemania", "Países Bajos", "Suecia", "Túnez"],
-    F: ["Bélgica", "Egipto", "Irán", "Nueva Zelanda"],
-    G: ["Francia", "Senegal", "Irak", "Noruega"],
-    H: ["Inglaterra", "Argelia", "Austria", "Jordania"],
-    I: ["Portugal", "Colombia", "RD del Congo", "Uzbekistán"],
-    J: ["Croacia", "Ghana", "Panamá", "Haití"],
-    K: ["Japón", "Ecuador", "Costa de Marfil", "Curazao"],
-    L: ["Marruecos", "Canadá", "Arabia Saudí", "República Checa"]
+    A: ["México", "Corea del Sur", "República Checa", "Sudáfrica"],
+    B: ["Suiza", "Canadá", "Bosnia y Herzegovina", "Catar"],
+    C: ["Brasil", "Marruecos", "Escocia", "Haití"],
+    D: ["Estados Unidos", "Turquía", "Paraguay", "Australia"],
+    E: ["Alemania", "Ecuador", "Costa de Marfil", "Curazao"],
+    F: ["Países Bajos", "Japón", "Suecia", "Túnez"],
+    G: ["Bélgica", "Egipto", "Irán", "Nueva Zelanda"],
+    H: ["España", "Uruguay", "Arabia Saudí", "Cabo Verde"],
+    I: ["Francia", "Senegal", "Noruega", "Irak"],
+    J: ["Argentina", "Austria", "Argelia", "Jordania"],
+    K: ["Portugal", "Colombia", "Uzbekistán", "RD del Congo"],
+    L: ["Inglaterra", "Croacia", "Ghana", "Panamá"]
   },
 
   // Los 8 mejores terceros que clasifican a dieciseisavos,
   // en orden (1º mejor tercero → 8º mejor tercero).
   thirdPlace: [
-    "Austria",
+    "Noruega",
     "Suecia",
-    "Irán",
-    "Marruecos",
-    "Arabia Saudí",
+    "Escocia",
+    "Paraguay",
     "Bosnia y Herzegovina",
-    "Panamá",
-    "Australia"
+    "Argelia",
+    "Ghana",
+    "Arabia Saudí"
   ],
 
   // Quiniela 1X2 — resultados reales de los 3 partidos fijos.
@@ -58,112 +58,114 @@ const RESULTS = {
   // se haya jugado.
   quiniela1x2: {
     "Mexico__South Korea": "1",
-    "Morocco__Scotland":   "1",
-    "Spain__Uruguay":      "X"
+    "Morocco__Scotland":   "2",
+    "Spain__Uruguay":      "2"
   },
 
   knockout: {
     round32: [
-      "México",
-      "Alemania",
-      "Bélgica",
-      "Francia",
-      "Portugal",
-      "Suecia",
-      "España",
-      "Marruecos",
-      "Croacia",
-      "Inglaterra",
-      "Japón",
-      "Colombia",
       "Canadá",
+      "Alemania",
+      "Países Bajos",
       "Brasil",
+      "Francia",
+      "Senegal",
+      "México",
+      "Inglaterra",
+      "Estados Unidos",
+      "Bélgica",
+      "Croacia",
+      "España",
+      "Suiza",
       "Argentina",
-      "Austria"
+      "Portugal",
+      "Turquía"
     ],
     round16: [
-      "México",
+      "Países Bajos",
       "Francia",
-      "Portugal",
-      "España",
-      "Croacia",
-      "Colombia",
       "Brasil",
-      "Argentina"
+      "Inglaterra",
+      "España",
+      "Bélgica",
+      "Argentina",
+      "Portugal"
     ],
     quarterfinals: [
       "Francia",
       "España",
-      "Croacia",
-      "Brasil"
+      "Brasil",
+      "Argentina"
     ],
     semifinals: [
       "Francia",
-      "Brasil"
+      "España",
+      "Brasil",
+      "Argentina"
     ],
 
-    champion: "Francia",
-    runnerUp: "Brasil",
-    finalists: ["Francia", "Brasil"],
+    champion: "Argentina",
+    runnerUp: "Francia",
+    finalists: ["Argentina", "Francia"],
 
-    thirdPlaceWinner: "España",
-    final: "Francia",
-    thirdPlace: "España",
+    thirdPlaceWinner: "Brasil",
+    final: "Argentina",
+    thirdPlace: "Brasil",
 
     matches: {
       round32: [
-        { match: 73, team1: "A2 Suiza", team2: "B2 Uruguay", winner: "México" },
-        { match: 74, team1: "E1 Alemania", team2: "3º Bosnia y Herzegovina", winner: "Alemania" },
-        { match: 75, team1: "F1 Bélgica", team2: "C2 Canadá", winner: "Bélgica" },
-        { match: 76, team1: "G1 Francia", team2: "F2 Egipto", winner: "Francia" },
-        { match: 77, team1: "I1 Portugal", team2: "3º Suecia", winner: "Portugal" },
-        { match: 78, team1: "E2 Países Bajos", team2: "I2 Colombia", winner: "Suecia" },
-        { match: 79, team1: "A1 México", team2: "3º Irán", winner: "España" },
-        { match: 80, team1: "L1 Marruecos", team2: "3º Arabia Saudí", winner: "Marruecos" },
-        { match: 81, team1: "J1 Croacia", team2: "3º Panamá", winner: "Croacia" },
-        { match: 82, team1: "H1 Inglaterra", team2: "3º Australia", winner: "Inglaterra" },
-        { match: 83, team1: "K2 Ecuador", team2: "L2 Canadá", winner: "Japón" },
-        { match: 84, team1: "I2 Colombia", team2: "J2 Ghana", winner: "Colombia" },
-        { match: 85, team1: "B1 España", team2: "K1 Japón", winner: "Canadá" },
-        { match: 86, team1: "D1 Brasil", team2: "H2 Argelia", winner: "Brasil" },
-        { match: 87, team1: "C1 Argentina", team2: "3º Austria", winner: "Argentina" },
-        { match: 88, team1: "H3 Austria", team2: "D2 Paraguay", winner: "Austria" }
+        { match: 73, team1: "Corea del Sur", team2: "Canadá", winner: "Canadá" },
+        { match: 74, team1: "Alemania", team2: "Paraguay", winner: "Alemania" },
+        { match: 75, team1: "Países Bajos", team2: "Marruecos", winner: "Países Bajos" },
+        { match: 76, team1: "Brasil", team2: "Japón", winner: "Brasil" },
+        { match: 77, team1: "Francia", team2: "Suecia", winner: "Francia" },
+        { match: 78, team1: "Ecuador", team2: "Senegal", winner: "Senegal" },
+        { match: 79, team1: "México", team2: "Escocia", winner: "México" },
+        { match: 80, team1: "Inglaterra", team2: "Noruega", winner: "Inglaterra" },
+        { match: 81, team1: "Estados Unidos", team2: "Bosnia y Herzegovina", winner: "Estados Unidos" },
+        { match: 82, team1: "Bélgica", team2: "Arabia Saudí", winner: "Bélgica" },
+        { match: 83, team1: "Colombia", team2: "Croacia", winner: "Croacia" },
+        { match: 84, team1: "España", team2: "Austria", winner: "España" },
+        { match: 85, team1: "Suiza", team2: "Argelia", winner: "Suiza" },
+        { match: 86, team1: "Argentina", team2: "Uruguay", winner: "Argentina" },
+        { match: 87, team1: "Portugal", team2: "Ghana", winner: "Portugal" },
+        { match: 88, team1: "Turquía", team2: "Egipto", winner: "Turquía" }
       ],
       round16: [
-        { match: 89, team1: "México", team2: "Alemania", winner: "México" },
-        { match: 90, team1: "Bélgica", team2: "Francia", winner: "Francia" },
-        { match: 91, team1: "Portugal", team2: "Suecia", winner: "Portugal" },
-        { match: 92, team1: "España", team2: "Marruecos", winner: "España" },
-        { match: 93, team1: "Croacia", team2: "Inglaterra", winner: "Croacia" },
-        { match: 94, team1: "Japón", team2: "Colombia", winner: "Colombia" },
-        { match: 95, team1: "Canadá", team2: "Brasil", winner: "Brasil" },
-        { match: 96, team1: "Argentina", team2: "Austria", winner: "Argentina" }
+        { match: 89, team1: "Canadá", team2: "Países Bajos", winner: "Países Bajos" },
+        { match: 90, team1: "Alemania", team2: "Francia", winner: "Francia" },
+        { match: 91, team1: "Brasil", team2: "Senegal", winner: "Brasil" },
+        { match: 92, team1: "México", team2: "Inglaterra", winner: "Inglaterra" },
+        { match: 93, team1: "Croacia", team2: "España", winner: "España" },
+        { match: 94, team1: "Estados Unidos", team2: "Bélgica", winner: "Bélgica" },
+        { match: 95, team1: "Argentina", team2: "Turquía", winner: "Argentina" },
+        { match: 96, team1: "Suiza", team2: "Portugal", winner: "Portugal" }
       ],
       quarterfinals: [
-        { match: 97, team1: "México", team2: "Francia", winner: "Francia" },
-        { match: 98, team1: "Portugal", team2: "España", winner: "España" },
-        { match: 99, team1: "Croacia", team2: "Colombia", winner: "Croacia" },
-        { match: 100, team1: "Brasil", team2: "Argentina", winner: "Brasil" }
+        { match: 97, team1: "Países Bajos", team2: "Francia", winner: "Francia" },
+        { match: 98, team1: "España", team2: "Bélgica", winner: "España" },
+        { match: 99, team1: "Brasil", team2: "Inglaterra", winner: "Brasil" },
+        { match: 100, team1: "Argentina", team2: "Portugal", winner: "Argentina" }
       ],
       semifinals: [
         { match: 101, team1: "Francia", team2: "España", winner: "Francia" },
-        { match: 102, team1: "Croacia", team2: "Brasil", winner: "Brasil" }
+        { match: 102, team1: "Brasil", team2: "Argentina", winner: "Argentina" }
       ],
       thirdPlace: [
-        { match: 103, team1: "España", team2: "Croacia", winner: "España" }
+        { match: 103, team1: "España", team2: "Brasil", winner: "Brasil" }
       ],
       final: [
-        { match: 104, team1: "Francia", team2: "Brasil", winner: "Francia" }
+        { match: 104, team1: "Francia", team2: "Argentina", winner: "Argentina" }
       ]
     }
   },
 
-  semifinalists: ["Francia", "España", "Croacia", "Brasil"],
-  finalists: ["Francia", "Brasil"],
+  semifinalists: ["Francia", "España", "Brasil", "Argentina"],
+  finalists: ["Argentina", "Francia"],
 
-  champion: "Francia",
-  runnerUp: "Brasil",
-  thirdPlaceWinner: "España",
+  champion: "Argentina",
+  runnerUp: "Francia",
+  thirdPlaceWinner: "Brasil",
 
   // 5 categorías divertidas — todas son una sola elección por categoría.
   // "topScorer", "topAssister" y "goldenGlove" esperan el NOMBRE de un jugador
@@ -174,7 +176,7 @@ const RESULTS = {
     topScorer: "Kylian Mbappé",
     topAssister: "Bruno Fernandes",
     goldenGlove: "Mike Maignan",
-    topScoringTeam: "Francia",
-    mostConcededTeam: "Nueva Zelanda"
+    topScoringTeam: "Argentina",
+    mostConcededTeam: "Haití"
   }
 };
