@@ -2348,6 +2348,7 @@ function renderQuiniela1x2() {
                   class="quiniela1x2-pick-btn${pick === lbl ? ' quiniela1x2-pick-active' : ''}"
                   data-key="${escapeHtml(m.key)}"
                   data-pick="${lbl}"
+                  aria-pressed="${pick === lbl ? 'true' : 'false'}"
                   title="${escapeHtml(titles[i])}">${lbl}</button>
         `).join('')}
       </div>
