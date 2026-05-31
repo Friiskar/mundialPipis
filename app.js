@@ -4893,13 +4893,12 @@ async function init() {
     if (e.target.id === 'predictionModal') closePredictionModal();
   });
 
-  document.addEventListener('keydown', e => {
-    document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      closePredictionModal();
-      closeAwardPickerModal();
-    }
-  });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closePredictionModal();
+    closeAwardPickerModal();
+  }
+});
 
 
   restoreLocalPrediction();
