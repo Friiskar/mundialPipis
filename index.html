@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiniela Peña La Ventana — Mundial 2026</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
-  <link rel="stylesheet" href="style.css?v=champion-banner">
+  <link rel="stylesheet" href="style.css?v=champion-banner-countdowns">
 </head>
 <body>
 
@@ -14,6 +14,17 @@
     <span class="lks-badge" title="Edición Peña La Ventana">Peña La Ventana · Mundial 2026</span>
     <h1>⚽ Quiniela Peña La Ventana — Mundial 2026 ⚽</h1>
     <p class="subtitle">La quiniela oficial de la peña. Pronostica, compite con otros socios y demuestra quién sabe realmente de fútbol.</p>
+
+    <div class="countdowns" id="countdowns">
+      <div class="countdown-box">
+        <div class="countdown-label">⏳ Cierre de apuestas</div>
+        <div class="countdown-time" id="cdBet">--</div>
+      </div>
+      <div class="countdown-box">
+        <div class="countdown-label">⚽ Empieza el Mundial</div>
+        <div class="countdown-time" id="cdKick">--</div>
+      </div>
+    </div>
   </header>
 
   <nav class="tab-nav">
@@ -129,7 +140,7 @@
 
   <script src="third_place_table.js?v=group-order-drag-and-new-awards"></script>
   <script src="results.js?v=simulacion-realista-grupos"></script>
-  <script src="app.js?v=euskadi-easter-egg"></script>
+  <script src="app.js?v=euskadi-countdowns"></script>
 
   <div class="name-modal-overlay" id="nameModal" style="display:none;">
     <div class="name-modal">
