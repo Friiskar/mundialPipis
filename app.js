@@ -4879,6 +4879,5 @@ async function init() {
   updateCountdowns();
   setInterval(updateCountdowns, 1000);
 }
-}
 
 document.addEventListener('DOMContentLoaded', init);
