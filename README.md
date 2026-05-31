@@ -1,67 +1,57 @@
-# ⚽ Quiniela LKS Next — Mundial 2026
+# ⚽ Quiniela Peña La Ventana — Mundial 2026
 
-La quiniela oficial de pasillo, café y Teams paralelo para la peña de **LKS Next**.
+La quiniela oficial de la **Peña La Ventana** para vivir el Mundial 2026 con un poco más de emoción, rivalidad sana y muchas conversaciones futboleras.
 
 ---
 
 ## ¿Qué es esto?
 
-Una aplicación web para hacer apuestas entre compañeros sobre el Mundial 2026. Sin dinero de por medio (ojalá), solo gloria eterna y el derecho a alardear en el chat de empresa.
+Una aplicación web para que los socios de la Peña La Ventana puedan poner a prueba sus conocimientos futbolísticos pronosticando el desarrollo completo del Mundial 2026.
+
+No hay premios millonarios ni contratos con clubes de primera. Solo el prestigio de acertar más que los demás y el derecho a presumir durante todo el verano.
 
 ## ¿Qué puedes hacer?
 
-- **Fase de grupos**: ordena las selecciones de cada grupo según cómo crees que van a quedar.
-- **Mejores terceros**: elige cuáles de los 12 terceros clasificados pasan a dieciseisavos.
-- **Eliminatorias**: completa el cuadro hasta el campeón del mundo.
-- **Premios individuales**:
-  - 🥇 Máximo Goleador
-  - 🎯 Máximo Asistente
-  - 🧤 Guante de Oro
-  - ⚽ Equipo Más Goleador
-  - 🥅 Equipo Más Goleado
-- **Ranking**: comprueba en tiempo real quién tiene más ojo con el fútbol (y quién debería dedicarse a otra cosa).
+* **Fase de grupos**: ordena las selecciones de cada grupo según cómo crees que van a quedar.
+* **Mejores terceros**: elige cuáles de los terceros clasificados avanzarán a la siguiente ronda.
+* **Eliminatorias**: completa todo el cuadro hasta coronar al campeón del mundo.
+* **Premios individuales**:
+
+  * 🥇 Máximo Goleador
+  * 🎯 Máximo Asistente
+  * 🧤 Guante de Oro
+  * ⚽ Equipo Más Goleador
+  * 🥅 Equipo Más Goleado
+  
+* **Clasificación**: consulta quién lidera la quiniela y quién tendrá que esperar al próximo Mundial para demostrar sus conocimientos.
 
 ## Sistema de puntuación
 
-| Acierto | Puntos |
-|---|---|
-| 1º de grupo | 4 |
-| 2º de grupo | 3 |
-| 3º de grupo | 2 |
-| Mejor tercero clasificado | 1 |
-| Pasa a 1/16 | 2 |
-| Pasa a 1/8 | 3 |
-| Pasa a cuartos | 5 |
-| Pasa a semis | 10 |
-| Finalista | 20 |
-| **Campeón** | **30** |
-| 3er y 4º puesto | 15 |
-| Máximo Goleador | 10 |
-| Máximo Asistente | 5 |
-| Guante de Oro | 5 |
-| Equipo Más Goleador | 5 |
-| Equipo Más Goleado | 8 |
+| Acierto                   | Puntos |
+| ------------------------- | ------ |
+| 1º de grupo               | 4      |
+| 2º de grupo               | 3      |
+| 3º de grupo               | 2      |
+| Mejor tercero clasificado | 1      |
+| Pasa a 1/16               | 2      |
+| Pasa a 1/8                | 3      |
+| Pasa a cuartos            | 5      |
+| Pasa a semifinales        | 10     |
+| Finalista                 | 20     |
+| **Campeón**               | **30** |
+| 3er y 4º puesto           | 15     |
+| Máximo Goleador           | 10     |
+| Máximo Asistente          | 5      |
+| Guante de Oro             | 5      |
+| Equipo Más Goleador       | 5      |
+| Equipo Más Goleado        | 8      |
 
-## Stack técnico
+## ¿Quién ganará?
 
-- HTML
-- CSS
-- JavaScript
-- Google Sheets (para guardar apuestas y calcular el ranking)
-- Demasiado café
+Eso está por ver. Algunos se guiarán por estadísticas, otros por intuición y alguno seguro que elegirá los resultados por simpatía.
 
-## ¿Cómo adaptarlo para otro grupo?
-
-Si quieres montar tu propia quiniela:
-
-1. Haz un fork del repositorio.
-2. Crea tu propio Google Sheet con la misma estructura y publícalo como CSV (`Archivo → Compartir → Publicar en la web → CSV`).
-3. Crea tu propio Google Form para recibir las apuestas.
-4. Sustituye las 3 variables del principio de `app.js`:
-   - `LEADERBOARD_CSV_URL` → URL del CSV publicado de tu hoja de cálculo.
-   - `FORM_ID` → ID de tu Google Form.
-   - `ENTRY_ID` → ID del campo de respuesta larga en tu formulario.
+Sea cual sea tu estrategia, recuerda enviar tu pronóstico antes de que empiece el torneo.
 
 ---
 
-*Hecho con cariño (y demasiado café) para LKS Next. Que gane el mejor… o el que más suerte tenga.*
+*Organizado por la Peña La Ventana para disfrutar juntos del Mundial 2026. Que gane el mejor... o el que tenga más suerte.*
