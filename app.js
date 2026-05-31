@@ -4831,13 +4831,11 @@ async function init() {
     });
   });
 
-  document.getElementById('btnReset').addEventListener('click', () => {
-    resetState();
-    computeMatchTeams();
-    renderAll();
-	updateCountdowns();
-  setInterval(updateCountdowns, 1000);
-  });
+	document.getElementById('btnReset').addEventListener('click', () => {
+		resetState();
+		computeMatchTeams();
+		renderAll();
+	  });
   const btnScoringHelp = document.getElementById('btnScoringHelp');
   if (btnScoringHelp) {
     btnScoringHelp.addEventListener('click', openScoringHelpModal);
@@ -4877,6 +4875,10 @@ async function init() {
   if (window.location.hash === '#leaderboard') {
     document.querySelector('[data-tab="leaderboard"]').click();
   }
+
+  updateCountdowns();
+  setInterval(updateCountdowns, 1000);
+}
 }
 
 document.addEventListener('DOMContentLoaded', init);
