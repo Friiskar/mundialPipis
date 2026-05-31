@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="./favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiniela LKS Next — Mundial 2026</title>
+  <title>Quiniela Peña La Ventana — Mundial 2026</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
   <link rel="stylesheet" href="style.css?v=champion-banner">
 </head>
 <body>
 
   <header>
-    <span class="lks-badge" title="Edición LKS Next">LKS Next · edición Mundial</span>
-    <h1>⚽ LKS Next, tráyamelo: ¡el MUNDIAL 2026! ⚽</h1>
-    <p class="subtitle">La quiniela oficial de pasillo, café y Teams paralelo. ¿Cuál va a ser tu "ojito con…"?</p>
+    <span class="lks-badge" title="Edición Peña La Ventana">Peña La Ventana · Mundial 2026</span>
+    <h1>⚽ Quiniela Peña La Ventana — Mundial 2026 ⚽</h1>
+    <p class="subtitle">La quiniela oficial de la peña. Pronostica, compite con otros socios y demuestra quién sabe realmente de fútbol.</p>
   </header>
 
   <nav class="tab-nav">
@@ -24,39 +24,44 @@
     </a>
   </nav>
 
-  <!-- ==================== PREDICTION TAB ==================== -->
   <div id="tab-predict" class="tab-content active">
     <div class="container">
 
-      <!-- Toolbar -->
       <div class="toolbar-btns">
-        <button class="toolbar-btn" id="btnReset">&#128260; Limpiar todo (sin llorar luego, eh)</button>
+        <button class="toolbar-btn" id="btnReset">&#128260; Limpiar todo (luego no vale arrepentirse)</button>
         <button class="toolbar-btn" id="btnScoringHelp">❓ Cómo se puntúa</button>
       </div>
 
-      <!-- Group Stage -->
       <h2 class="section-title">&#127758; Fase de grupos</h2>
-      <p class="note-text">Arrastra las selecciones (o usa las flechas ▲▼) para colocar cada grupo en el orden que crees que va a quedar. <strong>1º y 2º pasan directos</strong>; <strong>3º ent[...]
+      <p class="note-text">
+        Arrastra las selecciones (o usa las flechas ▲▼) para colocar cada grupo en el orden que crees que va a quedar.
+        <strong>1º y 2º pasan directos</strong>; <strong>3º entra en la lucha por ser uno de los mejores terceros</strong>.
+      </p>
       <div class="groups-grid" id="groupsGrid"></div>
 
-      <!-- Quiniela 1X2 -->
       <h2 class="section-title">&#127919; Quiniela 1X2 (punto extra)</h2>
-      <p class="note-text">3 partidos sorteados de la fase de grupos (¡y uno de <strong>España</strong> de regalo!). Marca <strong>1</strong> si gana el equipo local, <strong>X</strong> si crees[...]
+      <p class="note-text">
+        3 partidos sorteados de la fase de grupos (¡y uno de <strong>España</strong> de regalo!).
+        Marca <strong>1</strong> si gana el equipo local, <strong>X</strong> si crees que empatan
+        o <strong>2</strong> si gana el equipo visitante.
+      </p>
       <div id="quiniela1x2Panel"></div>
 
-      <!-- Best thirds -->
       <h2 class="section-title">🥉 Mejores terceros</h2>
-      <p class="note-text">Cuando hayas ordenado los grupos, aquí aparecerán los 12 terceros. Arrástralos para decidir cuáles son los <strong>8 que clasifican</strong> a dieciseisavos (los 4 últi[...]
+      <p class="note-text">
+        Cuando hayas ordenado los grupos, aquí aparecerán los 12 terceros. Arrástralos para decidir cuáles son los
+        <strong>8 que clasifican</strong> a dieciseisavos. Los 4 últimos se quedarán fuera.
+      </p>
       <div id="bestThirdsPanel"></div>
 
-      <!-- Knockout Bracket -->
-      <h2 class="section-title">🥊 Knockouts</h2>
-      <p class="note-text">Es de cajón cómo funciona. Si te hacen falta instrucciones mereces palmar.</p>
+      <h2 class="section-title">🥊 Eliminatorias</h2>
+      <p class="note-text">
+        Completa el cuadro eliminatorio hasta coronar al campeón del mundo. Aquí es donde se ganan los puntos importantes.
+      </p>
       <div class="bracket-wrapper">
         <div class="bracket" id="bracketContainer"></div>
       </div>
 
-      <!-- Awards -->
       <div class="awards-section">
         <h3>&#127942; Premios del Mundial</h3>
 
@@ -86,20 +91,18 @@
         </div>
       </div>
 
-      <!-- Submit -->
       <div class="submit-section">
-        <button class="submit-btn" id="btnSubmit">&#9917; Sentar cátedra (LKS Next style)</button>
+        <button class="submit-btn" id="btnSubmit">&#9917; ¡A por la gloria!</button>
       </div>
 
     </div>
   </div>
 
-  <!-- ==================== LEADERBOARD TAB ==================== -->
-    <div id="tab-leaderboard" class="tab-content">
+  <div id="tab-leaderboard" class="tab-content">
     <div class="container">
-      <h2 class="section-title">&#127942; Ranking LKS Next</h2>
+      <h2 class="section-title">&#127942; Ranking Peña La Ventana</h2>
       <p class="note-text">
-        Haz click en un compi para confirmar el sesgo que ya tienes de que no tiene ni idea de fútbol.
+        Consulta la clasificación y descubre quién está demostrando saber más de fútbol.
       </p>
 
       <div id="leaderboardContent">
@@ -115,47 +118,47 @@
     </div>
   </div>
 
-  <!-- Loading Overlay -->
   <div class="loading-overlay" id="loadingOverlay" style="display:none;">
     <span class="ball-spinner">&#9917;</span>
     <p id="loadingText">Cargando...</p>
   </div>
 
-  <!-- Toast container -->
   <div id="toastContainer"></div>
 
-  <!-- Confetti container -->
   <div class="confetti-container" id="confettiContainer"></div>
 
   <script src="third_place_table.js?v=group-order-drag-and-new-awards"></script>
   <script src="results.js?v=simulacion-realista-grupos"></script>
   <script src="app.js?v=euskadi-easter-egg"></script>
+
   <div class="name-modal-overlay" id="nameModal" style="display:none;">
-  <div class="name-modal">
-    <h3>Así que sentando cátedra, ¿eh?</h3>
-    <p>¿Quién cojones eres? (nombre + apellidos)</p>
+    <div class="name-modal">
+      <h3>¡Ya casi está!</h3>
+      <p>Introduce tu nombre y apellidos</p>
 
-    <input
-      type="text"
-      id="playerNameInput"
-      class="name-modal-input"
-      placeholder="Ej. Mikel Garcia Bartolome"
-      maxlength="40"
-    >
+      <input
+        type="text"
+        id="playerNameInput"
+        class="name-modal-input"
+        placeholder="Ej. Juan Pérez García"
+        maxlength="40"
+      >
 
-    <p>¿Y de qué equipo eres?</p>
-    <select id="teamSelect" class="name-modal-select" required aria-required="true">
-      <option value="">— Elige tu equipo —</option>
-    </select>
+      <p>¿Cuál es tu equipo favorito?</p>
+      <select id="teamSelect" class="name-modal-select" required aria-required="true">
+        <option value="">— Elige tu equipo —</option>
+      </select>
 
-    <div class="name-modal-actions">
-      <button type="button" class="toolbar-btn" id="cancelNameSubmit">Paso, debería estar currando</button>
-      <button type="button" class="submit-btn" id="confirmNameSubmit">Apostar fuerte (No hay vuelta atras)</button>
+      <div class="name-modal-actions">
+        <button type="button" class="toolbar-btn" id="cancelNameSubmit">Paso, ya lo haré luego</button>
+        <button type="button" class="submit-btn" id="confirmNameSubmit">Enviar pronóstico</button>
+      </div>
     </div>
   </div>
-</div>
-<footer class="lks-footer">
-  Hecho con cariño (y demasiado café) para la peña de <strong>LKS Next</strong>. Que gane el mejor… o el que más suerte tenga, vaya.
-</footer>
+
+  <footer class="lks-footer">
+    Hecho con cariño para la peña <strong>La Ventana</strong>. Que gane el mejor... o el que tenga más suerte.
+  </footer>
+
 </body>
 </html>
