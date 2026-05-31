@@ -8,6 +8,13 @@ const LEADERBOARD_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTw
 const FORM_ID = '1FAIpQLSc2se8Xj_Hx-1Q1SFHyypy487EPfnQ3wTbW2pDkcDGefHdS0w';
 const ENTRY_ID = 'entry.443364117';
 
+// Cierre de apuestas: 11 de junio de 2026, 19:00 hora peninsular española (CEST = UTC+2 → 17:00 UTC).
+const DEADLINE = new Date('2026-06-11T17:00:00Z');
+
+function isSubmissionClosed() {
+  return new Date() > DEADLINE;
+}
+
 const puntuaciones = {
   grupos: {
     posicion: {
@@ -4666,6 +4673,10 @@ function parseCSV(text) {
 const FORM_ACTION = 'https://docs.google.com/forms/d/e/'+FORM_ID+'/formResponse';
 
 function submitPrediction() {
+  if (isSubmissionClosed()) {
+    showToast('El plazo se cerró el 11 de junio a las 19:00. Llegas tarde, sorry baby.', true);
+    return;
+  }
   openNameModal();
 }
 
@@ -4683,6 +4694,12 @@ function closeNameModal() {
 }
 
 async function confirmSubmitPrediction() {
+  if (isSubmissionClosed()) {
+    showToast('El plazo ya está cerrado.', true);
+    closeNameModal();
+    return;
+  }
+
   const input = document.getElementById('playerNameInput');
   const playerName = input.value.trim();
 
