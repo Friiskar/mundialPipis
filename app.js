@@ -10,6 +10,7 @@ const ENTRY_ID = 'entry.443364117';
 
 // Cierre de apuestas: 11 de junio de 2026, 19:00 hora peninsular española (CEST = UTC+2 → 17:00 UTC).
 const DEADLINE = new Date('2026-06-11T17:00:00Z');
+const KICKOFF = new Date('2026-06-11T19:00:00Z'); // 21:00 hora peninsular (CEST)
 
 function isSubmissionClosed() {
   return new Date() > DEADLINE;
@@ -74,6 +75,38 @@ function emptyAwardsState() {
   AWARDS_CONFIG.forEach(a => { empty[a.key] = ''; });
   return empty;
 }
+
+
+// OUNTDOWN
+function formatCountdown(ms) {
+  const total = Math.floor(ms / 1000);
+  const d = Math.floor(total / 86400);
+  const h = Math.floor((total % 86400) / 3600);
+  const m = Math.floor((total % 3600) / 60);
+  const s = total % 60;
+  const pad = n => String(n).padStart(2, '0');
+  return `${d}d ${pad(h)}:${pad(m)}:${pad(s)}`;
+}
+
+function updateCountdowns() {
+  const now = Date.now();
+
+  const betEl = document.getElementById('cdBet');
+  if (betEl) {
+    const diff = DEADLINE.getTime() - now;
+    betEl.textContent = diff > 0 ? formatCountdown(diff) : '¡Cerrado!';
+    betEl.classList.toggle('countdown-finished', diff <= 0);
+  }
+
+  const kickEl = document.getElementById('cdKick');
+  if (kickEl) {
+    const diff = KICKOFF.getTime() - now;
+    kickEl.textContent = diff > 0 ? formatCountdown(diff) : '¡Ya rueda el balón!';
+    kickEl.classList.toggle('countdown-finished', diff <= 0);
+  }
+}
+
+
 
 // Traducción al español de los nombres de selección tal como aparecen en
 // openfootball/worldcup.json. Se aplica al cargar los datos para que toda la
@@ -4802,6 +4835,8 @@ async function init() {
     resetState();
     computeMatchTeams();
     renderAll();
+	updateCountdowns();
+  setInterval(updateCountdowns, 1000);
   });
   const btnScoringHelp = document.getElementById('btnScoringHelp');
   if (btnScoringHelp) {
