@@ -19,17 +19,17 @@ function isSubmissionClosed() {
 const puntuaciones = {
   grupos: {
     posicion: {
-      primero: 5,
-      segundo: 5,
-      tercero: 5,
-      cuarto: 5
+      primero: 4,
+      segundo: 3,
+      tercero: 2,
+      cuarto: 0
     },
     mejorTercero: 1
   },
   quiniela1x2: 1,
   eliminatorias: {
-    round32: 0,
-    round16: 5,
+    round32: 2,
+    round16: 3,
     quarterfinals: 5,
     semifinals: 10,
     finalist: 20,
@@ -37,11 +37,11 @@ const puntuaciones = {
     thirdPlace: 15
   },
   premios: {
-    topScorer: 5,
-    topAssister: 3,
-    goldenGlove: 3,
-    topScoringTeam: 3,
-    mostConcededTeam: 3
+    topScorer: 10,
+    topAssister: 5,
+    goldenGlove: 5,
+    topScoringTeam: 5,
+    mostConcededTeam: 8
   }
 };
 
