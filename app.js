@@ -296,8 +296,7 @@ const AWARD_PLAYERS = [
   { name: 'Ondřej Lingr', country: 'República Checa' },
   { name: 'Petr Ševčík', country: 'República Checa' },
   { name: 'Lukáš Červ', country: 'República Checa' },
-  { name: 'Miguêl Pionêro Barojik', country: 'República Checa' },
-
+  
   // Canadá
   { name: 'Maxime Crépeau', country: 'Canadá' },
   { name: 'Dayne St. Clair', country: 'Canadá' },
@@ -1529,10 +1528,6 @@ const AWARD_PLAYERS = [
   { name: 'Tomás Rodríguez', country: 'Panamá' },
   { name: 'Eduardo Guerrero', country: 'Panamá' },
   { name: 'Azmahar Ariano', country: 'Panamá' },
-
-  // 🐣 Easter Egg — Euskadi (País Vasco)
-  { name: 'Aritz Tokero Galdos', country: 'Euskadi (País Vasco)' },
-  { name: 'Jon Escalador Dorronsoro', country: 'Euskadi (País Vasco)' }
 
 ];
 
