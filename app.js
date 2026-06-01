@@ -2369,7 +2369,7 @@ function renderGroups() {
     card.title = complete ? 'Editar orden del grupo ' + g : 'Predecir orden del grupo ' + g;
 
     const h3 = document.createElement('h3');
-    h3.textContent = 'Group ' + g;
+    h3.textContent = 'Grupo ' + g;
     card.appendChild(h3);
 
     const standings = calculateGroupStandings(g);
@@ -4078,7 +4078,7 @@ function renderReviewGroups(prediction, entry) {
     header.className = 'review-group-card-header';
 
     const h3 = document.createElement('h3');
-    h3.textContent = 'Group ' + g;
+    h3.textContent = 'Grupo ' + g;
     header.appendChild(h3);
 
     const groupTotalPoints = calculateGroupReviewTotalPoints(g, prediction);
