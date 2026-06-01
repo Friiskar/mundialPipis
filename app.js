@@ -3893,6 +3893,73 @@ function openPrizesModal() {
   `;
 }
 
+function openHowToPlayModal() {
+  const modal = document.getElementById('predictionModal');
+  const viewer = document.getElementById('predictionViewer');
+
+  modal.style.display = 'flex';
+  viewer.innerHTML = `
+    <div class="scoring-help">
+      <h3>🎮 Cómo se juega</h3>
+
+      <p class="scoring-help-note">
+        Rellena tu pronóstico en las cinco secciones de la pestaña <strong>Apostar</strong>. Todo se guarda solo en tu dispositivo según vas tocando, así que puedes salir y volver sin perder nada. Cuando lo tengas, pulsa <strong>"¡A por la gloria!"</strong>, mete tu nombre y envíalo. Solo cuenta el último envío, y hay tiempo hasta el cierre de apuestas (mira el contador de arriba).
+      </p>
+
+      <div class="scoring-help-grid">
+        <div class="scoring-help-card">
+          <h4>🌍 Fase de grupos</h4>
+          <ul>
+            <li><strong>Arrastra</strong> los equipos de cada grupo (o usa ▲▼) para ordenarlos del 1º al 4º como crees que quedarán.</li>
+            <li>1º y 2º pasan directos; el 3º entra en la lucha de mejores terceros; el 4º queda eliminado.</li>
+          </ul>
+          <p class="scoring-help-small">Puntos: 1º <strong>${puntuaciones.grupos.posicion.primero}</strong>, 2º <strong>${puntuaciones.grupos.posicion.segundo}</strong>, 3º <strong>${puntuaciones.grupos.posicion.tercero}</strong>. Acertar el 4º no puntúa.</p>
+        </div>
+
+        <div class="scoring-help-card">
+          <h4>🎯 Quiniela 1X2</h4>
+          <ul>
+            <li>3 partidos de la fase de grupos. Pulsa <strong>1</strong> (gana el local), <strong>X</strong> (empate) o <strong>2</strong> (gana el visitante).</li>
+            <li>Vuelve a pulsar el mismo botón para deseleccionar.</li>
+          </ul>
+          <p class="scoring-help-small">Puntos: <strong>${puntuaciones.quiniela1x2} pt</strong> por cada partido acertado.</p>
+        </div>
+
+        <div class="scoring-help-card">
+          <h4>🥉 Mejores terceros</h4>
+          <ul>
+            <li>Cuando hayas ordenado los 12 grupos, aparecerán aquí los 12 terceros.</li>
+            <li>Arrástralos para decidir los <strong>8 que clasifican</strong>; los 4 de abajo se quedan fuera.</li>
+          </ul>
+          <p class="scoring-help-small">Puntos: <strong>${puntuaciones.grupos.mejorTercero} pt</strong> por cada uno de tus 8 que acabe entre los 8 reales.</p>
+        </div>
+
+        <div class="scoring-help-card">
+          <h4>🥊 Eliminatorias</h4>
+          <ul>
+            <li>Haz click en el equipo que crees que gana cada cruce, ronda a ronda, hasta coronar al campeón.</li>
+            <li>Si cambias un resultado anterior, los cruces que dependían de él se recalculan solos.</li>
+          </ul>
+          <p class="scoring-help-small">Puntos acumulativos por cada ronda alcanzada: 1/16 <strong>${puntuaciones.eliminatorias.round32}</strong>, 1/8 <strong>${puntuaciones.eliminatorias.round16}</strong>, cuartos <strong>${puntuaciones.eliminatorias.quarterfinals}</strong>, semis <strong>${puntuaciones.eliminatorias.semifinals}</strong>, finalista <strong>${puntuaciones.eliminatorias.finalist}</strong>, campeón <strong>+${puntuaciones.eliminatorias.champion}</strong>, 3er puesto <strong>${puntuaciones.eliminatorias.thirdPlace}</strong>.</p>
+        </div>
+
+        <div class="scoring-help-card">
+          <h4>🏆 Premios del Mundial</h4>
+          <ul>
+            <li>Elige un jugador o equipo en cada categoría (puedes buscar por nombre o país).</li>
+            <li>El Guante de Oro solo deja elegir porteros.</li>
+          </ul>
+          <p class="scoring-help-small">Puntos: ${AWARDS_CONFIG.map(cfg => `${cfg.emoji} <strong>${cfg.points}</strong>`).join(' · ')}.</p>
+        </div>
+      </div>
+
+      <p class="scoring-help-note">
+        ¿Quieres el desglose fino de la puntuación? Lo tienes en <strong>"Cómo se puntúa"</strong>.
+      </p>
+    </div>
+  `;
+}
+
 function renderPredictionReview(entry) {
   const viewer = document.getElementById('predictionViewer');
 
@@ -4881,6 +4948,10 @@ async function init() {
   if (btnPrizes) {
     btnPrizes.addEventListener('click', openPrizesModal);
   }
+  const btnHowToPlay = document.getElementById('btnHowToPlay');
+  if (btnHowToPlay) {
+    btnHowToPlay.addEventListener('click', openHowToPlayModal);
+  }
   document.getElementById('btnSubmit').addEventListener('click', submitPrediction);
   document.getElementById('confirmNameSubmit').addEventListener('click', confirmSubmitPrediction);
   document.getElementById('cancelNameSubmit').addEventListener('click', closeNameModal);
@@ -4922,3 +4993,4 @@ document.addEventListener('keydown', e => {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+	
