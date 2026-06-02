@@ -3866,7 +3866,7 @@ function openPrizesModal() {
         <div class="scoring-help-card">
           <h4>🎟️ La apuesta</h4>
           <ul>
-            <li>Cada participante pone <strong>5 €</strong> para entrar en la quiniela.</li>
+            <li>Cada participante pone <strong>10 €</strong> para entrar en la quiniela.</li>
           </ul>
           <p class="scoring-help-small">El bote total es la suma de todas las apuestas. Solo una apuesta por persona. Pago previo al arranque por Bizum.</p>
         </div>
@@ -3882,7 +3882,7 @@ function openPrizesModal() {
       </div>
 
       <p class="scoring-help-note">
-        Ejemplo: si juegan 10 personas, el bote es 50 €. El ganador se lleva 25 €, el segundo 15 € y el tercero 10 €.
+        Ejemplo: si juegan 10 personas, el bote es 100 €. El ganador se lleva 50 €, el segundo 30 € y el tercero 20 €.
       </p>
     </div>
   `;
